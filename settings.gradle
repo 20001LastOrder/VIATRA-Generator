@@ -1,0 +1,9 @@
+rootProject.name = 'viatra-solver'
+include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model', 
+		'Framework:hu.bme.mit.inf.dslreasoner.ecore2logic',
+		'Framework:hu.bme.mit.inf.dslreasoner.logic2ecore',
+		'Framework:hu.bme.mit.inf.dslreasoner.viatra2logic',
+		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
+		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
+		'Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc',
+		'Solvers:SMT-Solver:com.microsoft.z3'

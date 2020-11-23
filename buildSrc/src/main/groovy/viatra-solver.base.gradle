@@ -1,0 +1,21 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java'
+}
+
+group = 'com.eclipse.viatra'
+version = '1.0'
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://repo.eclipse.org/content/groups/releases/"
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:4.13"
+}

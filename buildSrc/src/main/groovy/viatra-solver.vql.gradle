@@ -1,0 +1,6 @@
+dependencies {
+	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime', version: '2.5.0.M1'
+    implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.matchers', version: '2.5.0.M1'
+	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.base', version: '2.5.0.M1'
+
+}

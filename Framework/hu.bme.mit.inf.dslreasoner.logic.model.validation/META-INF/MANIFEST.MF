@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.inf.dslreasoner.logic.model.validation
+Bundle-SymbolicName: hu.bme.mit.inf.dslreasoner.logic.model.validation;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: hu.bme.mit.inf.dslreasoner.logic.model,
+ org.eclipse.viatra.query.runtime,
+ org.eclipse.viatra.addon.validation.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

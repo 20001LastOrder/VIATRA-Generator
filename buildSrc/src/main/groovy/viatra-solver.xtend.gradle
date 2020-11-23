@@ -1,0 +1,8 @@
+dependencies {
+	implementation 'org.eclipse.xtend:org.eclipse.xtend.lib:2.23.0'
+}
+
+sourceSets {
+    main.xtendOutputDir = 'xtend-gen'
+    test.xtendOutputDir = 'test/xtend-gen'
+}

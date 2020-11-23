@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="validation.constraint.hu.bme.mit.inf.dslreasoner.logic.model.patterns.cyclicTypeHierarchy" point="org.eclipse.viatra.addon.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.dslreasoner.logic.model.patterns.CyclicTypeHierarchyConstraint0" name="hu.bme.mit.inf.dslreasoner.logic.model.patterns.cyclicTypeHierarchy"/>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.dslreasoner.logic.model.patterns.elementNotDefinedInSupertype" point="org.eclipse.viatra.addon.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.dslreasoner.logic.model.patterns.ElementNotDefinedInSupertypeConstraint0" name="hu.bme.mit.inf.dslreasoner.logic.model.patterns.elementNotDefinedInSupertype"/>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.dslreasoner.logic.model.patterns.elementWithNoPossibleDynamicType" point="org.eclipse.viatra.addon.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.dslreasoner.logic.model.patterns.ElementWithNoPossibleDynamicTypeConstraint0" name="hu.bme.mit.inf.dslreasoner.logic.model.patterns.elementWithNoPossibleDynamicType"/>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.dslreasoner.logic.model.patterns.typeSystemIsInconsistent" point="org.eclipse.viatra.addon.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.dslreasoner.logic.model.patterns.TypeSystemIsInconsistentConstraint0" name="hu.bme.mit.inf.dslreasoner.logic.model.patterns.typeSystemIsInconsistent"/>
+  </extension>
+</plugin>

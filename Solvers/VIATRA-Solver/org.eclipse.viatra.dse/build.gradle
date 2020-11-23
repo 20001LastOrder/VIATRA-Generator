@@ -1,0 +1,23 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'viatra-solver.base'
+    id 'viatra-solver.ecore'
+    id 'viatra-solver.vql'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+
+dependencies {
+	implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.edit', version: '2.16.0'
+	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.transformation.evm', version: '2.5.0.M1'
+	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.transformation.runtime.emf', version: '2.5.0.M1'
+	implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+	implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.change', version: '2.14.0'
+}
