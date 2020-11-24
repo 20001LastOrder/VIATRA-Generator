@@ -6,4 +6,5 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
 		'Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc',
-		'Solvers:SMT-Solver:com.microsoft.z3'
+		'Solvers:SMT-Solver:com.microsoft.z3', 
+		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra'
