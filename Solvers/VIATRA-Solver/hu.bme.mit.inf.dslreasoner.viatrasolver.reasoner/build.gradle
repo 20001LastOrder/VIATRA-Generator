@@ -1,0 +1,51 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'viatra-solver.base'
+    id 'viatra-solver.ecore'
+    id 'viatra-solver.xtend'
+    id "org.xtext.xtend" version '2.0.8'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['ecore-gen', 'src', 'xtend-gen']
+        }
+    }
+}
+
+dependencies {
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation group: 'com.google.guava', name: 'guava', version: '27.1-jre'
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: '2.24.0.M1'
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib.macro', version: '2.24.0.M1'
+    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.matchers', version: '2.5.0.M1'
+    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime', version: '2.5.0.M1'
+    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.dse', version: '0.25.0.M1'
+    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.edit', version: '2.13.0'
+    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.base.itc', version: '2.5.0.M1'
+
+	implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
+    implementation project(':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
+    implementation project(':Framework:hu.bme.mit.inf.dslreasoner.viatra2logic')
+    implementation project(':Framework:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatraquery')
+    implementation project(':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
+}
+
+ // hu.bme.mit.inf.dslreasoner.ecore2logic;bundle-version="1.0.0",
+ // hu.bme.mit.inf.dslreasoner.logic.model;bundle-version="1.0.0",
+ // hu.bme.mit.inf.dslreasoner.viatra2logic;bundle-version="1.0.0",
+ // hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatraquery;bundle-version="1.0.0",
+ // hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage;bundle-version="1.0.0",
+ // com.google.guava,
+ // org.eclipse.xtext.xbase.lib,
+ // org.eclipse.xtend.lib,
+ // org.eclipse.xtend.lib.macro,
+ // org.eclipse.viatra.query.runtime.matchers;bundle-version="1.5.0",
+ // org.eclipse.viatra.query.runtime;bundle-version="1.5.0",
+ // org.eclipse.viatra.dse;bundle-version="0.20.0",
+ // org.eclipse.emf.ecore.edit;bundle-version="2.9.0",
+ // org.eclipse.viatra.query.runtime.base.itc;bundle-version="1.7.0"

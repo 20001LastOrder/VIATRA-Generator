@@ -1,10 +1,24 @@
 rootProject.name = 'viatra-solver'
 include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model', 
+		'Framework:hu.bme.mit.inf.dslreasoner.logic.model.validation',
 		'Framework:hu.bme.mit.inf.dslreasoner.ecore2logic',
 		'Framework:hu.bme.mit.inf.dslreasoner.logic2ecore',
 		'Framework:hu.bme.mit.inf.dslreasoner.viatra2logic',
-		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
-		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
+
+		// 'Solvers:Alloy-Solver:hu.bme.mit.inf.dlsreasoner.alloy.reasoner',
+		'Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language',
+		'Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language.ui',
+
 		'Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc',
-		'Solvers:SMT-Solver:com.microsoft.z3', 
-		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra'
+		'Solvers:SMT-Solver:com.microsoft.z3',
+
+		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra',
+		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
+		// 'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.reasoner',		
+		// 'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.visualisation',
+		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse'
+
+
+
+		
+

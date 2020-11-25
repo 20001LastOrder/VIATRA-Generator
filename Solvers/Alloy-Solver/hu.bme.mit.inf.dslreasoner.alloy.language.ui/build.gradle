@@ -1,0 +1,42 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'viatra-solver.base'
+    id 'viatra-solver.ecore'
+    id 'viatra-solver.xtend'
+    id 'viatra-solver.vql'
+    id "org.xtext.xtend" version "2.0.8"
+    id 'war'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['ecore-gen', 'src', 'xtend-gen']
+        }
+    }
+}
+
+dependencies {
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    implementation project(':Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language')
+
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.ui', version: '2.10.0'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.ui.shared', version: '2.10.0'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.builder', version: '2.10.0'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.common.types.ui', version: '2.10.0'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.ui.codetemplates.ui', version: '2.10.0'
+
+    compile group: 'org.eclipse.ui', name: 'org.eclipse.ui', version: '3.5.0.I20090604-2000'
+    compile group: 'org.eclipse.ui', name: 'org.eclipse.ui.editors', version: '3.2.0.v20060605-1400'
+    compile group: 'org.eclipse.ui', name: 'org.eclipse.ui.ide', version: '3.5.0.I20090525-2000'
+
+    // compile group: 'org.kermeta.eclipse', name: 'org.antlr.runtime', version: '3.2.0.v201101311130'
+    compile group: 'p2.osgi.bundle', name: 'org.antlr.runtime', version: '3.0.0.v200803061811'
+    compile group: 'org.eclipse.compare', name: 'org.eclipse.compare', version: '3.7.400'
+
+    
+}
+
