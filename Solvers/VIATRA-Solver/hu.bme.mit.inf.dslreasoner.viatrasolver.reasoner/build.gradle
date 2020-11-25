@@ -19,20 +19,21 @@ dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '27.1-jre'
     implementation group: 'log4j', name: 'log4j', version: '1.2.17'
 
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib.macro', version: '2.24.0.M1'
-    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.matchers', version: '2.5.0.M1'
-    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime', version: '2.5.0.M1'
-    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.dse', version: '0.25.0.M1'
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.edit', version: '2.13.0'
-    compile group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.base.itc', version: '2.5.0.M1'
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib.macro', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.matchers', version: '2.5.0.M1'
+    implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime', version: '2.5.0.M1'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.edit', version: '2.13.0'
+    implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.base.itc', version: '2.5.0.M1'
+    implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.transformation.runtime.emf', version: '2.4.0'
 
 	implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.viatra2logic')
-    implementation project(':Framework:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatraquery')
+    implementation project(':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra')
     implementation project(':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
+    implementation project(':Solvers:VIATRA-Solver:org.eclipse.viatra.dse')
 }
 
  // hu.bme.mit.inf.dslreasoner.ecore2logic;bundle-version="1.0.0",

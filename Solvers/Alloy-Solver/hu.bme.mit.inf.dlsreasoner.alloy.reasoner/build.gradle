@@ -10,7 +10,7 @@ plugins {
 sourceSets {
     main {
         java {
-            srcDirs = ['ecore-gen', 'src', 'xtend-gen']
+            srcDirs = ['ecore-gen', 'src', 'xtend-gen', 'vql-gen']
         }
     }
 }
@@ -33,7 +33,6 @@ dependencies {
     implementation project(':Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
-
-
+    implementation files('lib/alloy4.2_2015-02-22.jar')
 }
 

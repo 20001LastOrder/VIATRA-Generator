@@ -11,7 +11,7 @@ plugins {
 sourceSets {
     main {
         java {
-            srcDirs = ['ecore-gen', 'src', 'xtend-gen']
+            srcDirs = ['ecore-gen', 'src', 'xtend-gen', 'src-gen']
         }
     }
 }
@@ -28,8 +28,8 @@ dependencies {
     compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
     compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.common.types', version: '2.24.0.M1'
 
-    // Doesn't work
-    providedCompile group: 'org.apache.commons', name: 'org.apache.commons.logging', version: '1.0.4.v200706111724'
+    compile group: 'org.eclipse.ecf', name: 'org.apache.commons.logging', version: '1.1.1.v201101211721'
+
     
     compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
 
@@ -39,7 +39,8 @@ dependencies {
     compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.mwe2.launch', version: '2.11.3'
     compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', version: '2.20.0'
 
-    // None works
+    compile group: 'org.antlr', name: 'antlr4-runtime', version: '4.8-1'
+
     // compile group: 'org.kermeta.eclipse', name: 'org.antlr.runtime', version: '3.2.0.v201101311130'
     // compile group: 'p2.osgi.bundle', name: 'org.antlr.runtime', version: '3.0.0.v200803061811'
 
