@@ -11,12 +11,15 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 
 		'Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc',
 		'Solvers:SMT-Solver:com.microsoft.z3',
+    'Solvers:SMT-Solver:hu.bme.mit.inf.dslreasoner.smt.language',
 
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.reasoner',		
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.visualisation',
-		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse'
+		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
+
+    'Application:org.eclipse.viatra.solver.language.model'
 
 
 
