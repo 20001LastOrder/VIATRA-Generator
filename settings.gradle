@@ -7,11 +7,14 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 
 		'Solvers:Alloy-Solver:hu.bme.mit.inf.dlsreasoner.alloy.reasoner',
 		'Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language',
-		'Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language.ui',
+		//'Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language.ui',
 
 		'Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc',
+
 		'Solvers:SMT-Solver:com.microsoft.z3',
-    'Solvers:SMT-Solver:hu.bme.mit.inf.dslreasoner.smt.language',
+    	'Solvers:SMT-Solver:hu.bme.mit.inf.dslreasoner.smt.language',
+    	'Solvers:SMT-Solver:hu.bme.mit.inf.dslreasoner.smt.reasoner',
+    	//'Solvers:SMT-Solver:hu.bme.mit.inf.dslreasoner.smt.language.ui',
 
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage',
@@ -19,7 +22,7 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.visualisation',
 		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
 
-    'Application:org.eclipse.viatra.solver.language.model'
+    	'Application:org.eclipse.viatra.solver.language.model'
 
 
 
