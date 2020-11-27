@@ -22,8 +22,9 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 		'Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.visualisation',
 		'Solvers:VIATRA-Solver:org.eclipse.viatra.dse',
 
-    	'Application:org.eclipse.viatra.solver.language.model'
-    	'Application:org.eclipse.viatra.solver.language'
+    	'Application:org.eclipse.viatra.solver.language.model',
+    	'Application:org.eclipse.viatra.solver.language',
+    	'Application:hu.bme.mit.inf.dslreasoner.application'
 
 
 
