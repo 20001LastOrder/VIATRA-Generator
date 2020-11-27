@@ -32,6 +32,12 @@ application {
     mainClass = 'hu.bme.mit.inf.dslreasoner.application.execution.StandaloneScriptExecutor'
 }
 
+ task createStartScripts(type: CreateStartScripts) {
+   outputDir = file('build/sample')
+   mainClass = application.mainClass
+   applicationName = 'hu.bme.mit.inf.dslreasoner.application'
+   classpath = files('lib/*')
+ }
 
 dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
@@ -58,6 +64,7 @@ dependencies {
     implementation group: 'org.eclipse.platform', name: 'org.eclipse.core.runtime', version: '3.19.0'
     implementation group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.rete', version: '2.4.0'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.edit', version: '2.16.0'
 }
 
 jar {
@@ -67,8 +74,8 @@ jar {
         )
     }
 
-    from { 
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    // from { 
+    //     configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    // }
+    // exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
  }
