@@ -7,11 +7,25 @@ plugins {
     id "org.xtext.xtend" version "2.0.8"
 }
 
+compileJava.dependsOn downloadNonRepositoryJar
+
 sourceSets {
     main {
         java {
             srcDirs = ['ecore-gen', 'src', 'xtend-gen', 'vql-gen']
         }
+    }
+}
+
+def tooling_jar = './alloy4.2_2015-02-22.jar'
+def tooling_jar_url = 'http://alloytools.org/download/alloy4.2_2015-02-22.jar'
+
+
+task downloadNonRepositoryJar {
+    def f = new File(tooling_jar)
+
+    if (!f.exists()) {
+        new URL(tooling_jar_url).withInputStream{ i -> f.withOutputStream{ it << i }}
     }
 }
 
@@ -33,6 +47,5 @@ dependencies {
     implementation project(':Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
-    implementation files('lib/alloy4.2_2015-02-22.jar')
+    implementation files(tooling_jar)
 }
-
