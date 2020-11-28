@@ -2,6 +2,16 @@ language: java
 script:
 - ./gradlew build
 
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "Application/hu.bme.mit.inf.dslreasoner.application/build/distributions/hu.bme.mit.inf.dslreasoner.application*"
+  on:
+    tags: true
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
