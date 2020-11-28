@@ -1,0 +1,31 @@
+plugins {
+    id 'viatra-solver.base'
+    id 'viatra-solver.ecore'
+    id 'viatra-solver.vql'
+    id 'viatra-solver.xtend'
+    id "org.xtext.xtend" version '2.0.8'
+    id 'application'
+}
+
+sourceSets {
+    test {
+        java {
+            srcDirs = ["src", "test/xtend-gen"]  
+        }
+    }
+}
+
+test {
+  // ...
+
+  // explicitly include or exclude tests
+  exclude '**/cardinality/**'
+  // ...
+}
+
+dependencies {
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    implementation project (':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra')
+    implementation "junit:junit:4.11"
+}

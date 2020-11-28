@@ -24,7 +24,10 @@ include 'Framework:hu.bme.mit.inf.dslreasoner.logic.model',
 
     	'Application:org.eclipse.viatra.solver.language.model',
     	'Application:org.eclipse.viatra.solver.language',
-    	'Application:hu.bme.mit.inf.dslreasoner.application'
+    	'Application:hu.bme.mit.inf.dslreasoner.application',
+
+    	'Tests:hu.bme.mit.inf.dslreasoner.application.FAMTest',
+    	'Tests:hu.bme.mit.inf.dslreasoner.viatrasolver.logic2viatra.tests'
 
 
 
