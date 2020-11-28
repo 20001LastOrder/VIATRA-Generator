@@ -1,5 +1,5 @@
 language: java
-script: gradle :Application:hu.bme.mit.inf.dslreasoner.application:build
+script: ./gradlew :Application:hu.bme.mit.inf.dslreasoner.application:build
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
