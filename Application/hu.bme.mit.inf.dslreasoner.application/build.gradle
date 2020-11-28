@@ -42,15 +42,15 @@ application {
 }
 
 def applicationDir = './Application/hu.bme.mit.inf.dslreasoner.application/'
-def tooling_jar = 'org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
-def tooling_jar_url = 'http://download.eclipse.org/releases/2020-09/202009161000/plugins/org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
+def toolingJar = 'org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
+def toolingJarURL = 'http://download.eclipse.org/releases/2020-09/202009161000/plugins/org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
 
 
 task downloadNonRepositoryJar {
-    def f = new File(applicationDir + tooling_jar)
+    def f = new File(applicationDir + toolingJar)
 
     if (!f.exists()) {
-        new URL(tooling_jar_url).withInputStream{ i -> f.withOutputStream{ it << i }}
+        new URL(toolingJarURL).withInputStream{ i -> f.withOutputStream{ it << i }}
     }
 }
 
@@ -75,7 +75,7 @@ dependencies {
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.patternlanguage.emf', version: '2.4.1'
     implementation group: 'org.apache.stratos', name: 'guice-multibindings', version: '3.0'
     implementation group: 'org.eclipse.viatra', name: 'viatra-query-language-extensions', version: '2.4.1'
-    implementation files (tooling_jar)
+    implementation files (toolingJar)
     implementation group: 'org.eclipse.platform', name: 'org.eclipse.core.runtime', version: '3.19.0'
     implementation group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.rete', version: '2.4.0'

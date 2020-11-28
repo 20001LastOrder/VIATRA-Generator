@@ -7,7 +7,6 @@ plugins {
     id "org.xtext.xtend" version "2.0.8"
 }
 
-compileJava.dependsOn downloadNonRepositoryJar
 
 sourceSets {
     main {
@@ -17,17 +16,19 @@ sourceSets {
     }
 }
 
-def tooling_jar = './alloy4.2_2015-02-22.jar'
-def tooling_jar_url = 'http://alloytools.org/download/alloy4.2_2015-02-22.jar'
-
+def alloyJar = 'lib/alloy4.2_2015-02-22.jar'
+def alloyJarURL = 'http://alloytools.org/download/alloy4.2_2015-02-22.jar'
+def projectDir = './Solvers/Alloy-Solver/hu.bme.mit.inf.dlsreasoner.alloy.reasoner/'
 
 task downloadNonRepositoryJar {
-    def f = new File(tooling_jar)
+    def f = new File(projectDir + alloyJar)
 
     if (!f.exists()) {
-        new URL(tooling_jar_url).withInputStream{ i -> f.withOutputStream{ it << i }}
+        new URL(alloyJarURL).withInputStream{ i -> f.withOutputStream{ it << i }}
     }
 }
+
+compileJava.dependsOn downloadNonRepositoryJar
 
 dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
@@ -47,5 +48,5 @@ dependencies {
     implementation project(':Solvers:Alloy-Solver:hu.bme.mit.inf.dslreasoner.alloy.language')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
-    implementation files(tooling_jar)
+    implementation files(alloyJar)
 }
