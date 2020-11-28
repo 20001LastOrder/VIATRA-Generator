@@ -6,7 +6,6 @@
  * User Manual available at https://docs.gradle.org/5.6.2/userguide/java_library_plugin.html
  */
 
-
 plugins {
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
@@ -32,12 +31,28 @@ application {
     mainClass = 'hu.bme.mit.inf.dslreasoner.application.execution.StandaloneScriptExecutor'
 }
 
- task createStartScripts(type: CreateStartScripts) {
-   outputDir = file('build/sample')
-   mainClass = application.mainClass
-   applicationName = 'hu.bme.mit.inf.dslreasoner.application'
-   classpath = files('lib/*')
- }
+ startScripts {
+    doLast {
+        // combine class path, as the quantity of dependencies is large
+        windowsScript.text = windowsScript.text.replaceAll("set CLASSPATH=.*",
+                "set CLASSPATH=%APP_HOME%\\\\lib\\\\\\*")
+
+        unixScript.text = unixScript.text.replaceAll("CLASSPATH=.*", 'CLASSPATH=\\$APP_HOME\\/lib\\/\\*')
+    }
+}
+
+def applicationDir = './Application/hu.bme.mit.inf.dslreasoner.application/'
+def tooling_jar = 'org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
+def tooling_jar_url = 'http://download.eclipse.org/releases/2020-09/202009161000/plugins/org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar'
+
+
+task downloadNonRepositoryJar {
+    def f = new File(applicationDir + tooling_jar)
+
+    if (!f.exists()) {
+        new URL(tooling_jar_url).withInputStream{ i -> f.withOutputStream{ it << i }}
+    }
+}
 
 dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
@@ -60,11 +75,10 @@ dependencies {
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.patternlanguage.emf', version: '2.4.1'
     implementation group: 'org.apache.stratos', name: 'guice-multibindings', version: '3.0'
     implementation group: 'org.eclipse.viatra', name: 'viatra-query-language-extensions', version: '2.4.1'
-    implementation files ('./org.eclipse.viatra.query.tooling.core_2.4.1.202008261234.jar')
+    implementation files (tooling_jar)
     implementation group: 'org.eclipse.platform', name: 'org.eclipse.core.runtime', version: '3.19.0'
     implementation group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.rete', version: '2.4.0'
-    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.edit', version: '2.16.0'
 }
 
 jar {
@@ -73,9 +87,6 @@ jar {
                 'Main-Class': 'hu.bme.mit.inf.dslreasoner.application.execution.StandaloneScriptExecutor'
         )
     }
-
-    // from { 
-    //     configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    // }
-    // exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
  }
+
+ compileJava.dependsOn downloadNonRepositoryJar
