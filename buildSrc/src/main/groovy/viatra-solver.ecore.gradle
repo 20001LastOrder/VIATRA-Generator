@@ -1,3 +1,5 @@
+// This plugin declares dependencies for project containing Ecore dependencies
+
 dependencies {
     implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.23.0'
     implementation group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'

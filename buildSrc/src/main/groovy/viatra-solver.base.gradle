@@ -1,5 +1,6 @@
+// This plugin declares the build logic common to all projects
+
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'java'
 }
 
@@ -8,9 +9,8 @@ version = '1.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
     mavenCentral()
     maven {
@@ -21,3 +21,6 @@ repositories {
 dependencies {
     testImplementation "junit:junit:4.13"
 }
+
+
+

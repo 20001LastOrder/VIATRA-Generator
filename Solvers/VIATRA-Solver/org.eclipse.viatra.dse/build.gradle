@@ -1,5 +1,4 @@
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
     id 'viatra-solver.vql'

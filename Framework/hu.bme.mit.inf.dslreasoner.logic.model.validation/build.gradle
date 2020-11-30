@@ -1,5 +1,4 @@
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
     id 'viatra-solver.xtend'
@@ -15,19 +14,12 @@ sourceSets {
 }
 
 dependencies {
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation group: 'com.google.guava', name: 'guava', version: '27.1-jre'
     implementation group: 'log4j', name: 'log4j', version: '1.2.17'
-
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime', version: '2.4.0'
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.addon.validation.core', version: '2.4.0'
     implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.matchers', version: '2.4.0'
 
-
     implementation project(':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
 
 }
-
-//Require-Bundle: hu.bme.mit.inf.dslreasoner.logic.model,
- //org.eclipse.viatra.query.runtime,
- //org.eclipse.viatra.addon.validation.core

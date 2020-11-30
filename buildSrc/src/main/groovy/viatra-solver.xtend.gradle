@@ -1,3 +1,5 @@
+// This plugin is used for project with Xtend files
+
 dependencies {
 	implementation 'org.eclipse.xtend:org.eclipse.xtend.lib:2.23.0'
 }

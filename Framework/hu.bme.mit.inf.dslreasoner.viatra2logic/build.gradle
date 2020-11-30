@@ -1,5 +1,4 @@
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
     id 'viatra-solver.xtend'
@@ -15,13 +14,12 @@ sourceSets {
     }
 }
 
-
 dependencies {
-	implementation project (':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
-    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
-    implementation project (':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
 	implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version: '2.23.0'
-	implementation project (':Solvers:SMT-Solver:com.microsoft.z3')
 	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.patternlanguage.emf', version: '2.5.0.M1'
 
+    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
+    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
+    implementation project (':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
+    implementation project (':Solvers:SMT-Solver:com.microsoft.z3')
 }

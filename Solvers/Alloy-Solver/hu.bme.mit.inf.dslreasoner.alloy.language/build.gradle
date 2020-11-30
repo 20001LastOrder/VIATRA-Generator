@@ -1,5 +1,4 @@
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
     id 'viatra-solver.xtend'
@@ -17,35 +16,21 @@ sourceSets {
 }
 
 dependencies {
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation group: 'log4j', name: 'log4j', version: '1.2.17'
-
-   
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version: '2.24.0.M1'
     runtime group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.generator', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.util', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
-    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.common.types', version: '2.24.0.M1'
-
-    compile group: 'org.eclipse.ecf', name: 'org.apache.commons.logging', version: '1.1.1.v201101211721'
-
-    
-    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
-
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.codegen.ecore', version: '2.23.0'
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.23.0'
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.mwe.utils', version: '1.5.3'
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.mwe2.launch', version: '2.11.3'
-    compile group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', version: '2.20.0'
-
-    compile group: 'org.antlr', name: 'antlr4-runtime', version: '4.8-1'
-
-    // compile group: 'org.kermeta.eclipse', name: 'org.antlr.runtime', version: '3.2.0.v201101311130'
-    // compile group: 'p2.osgi.bundle', name: 'org.antlr.runtime', version: '3.0.0.v200803061811'
-
-    compile group: 'org.objectweb.asm', name: 'com.springsource.org.objectweb.asm', version: '3.2.0'
-    compile group: 'org.eclipse.equinox', name: 'org.eclipse.equinox.common', version: '3.6.0'
-
-
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.util', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.common.types', version: '2.24.0.M1'
+    implementation group: 'org.eclipse.ecf', name: 'org.apache.commons.logging', version: '1.1.1.v201101211721'
+    implementation group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.codegen.ecore', version: '2.23.0'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.23.0'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.mwe.utils', version: '1.5.3'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.mwe2.launch', version: '2.11.3'
+    implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', version: '2.20.0'
+    implementation group: 'org.antlr', name: 'antlr4-runtime', version: '4.8-1'
+    implementation group: 'org.objectweb.asm', name: 'com.springsource.org.objectweb.asm', version: '3.2.0'
+    implementation group: 'org.eclipse.equinox', name: 'org.eclipse.equinox.common', version: '3.6.0'
 }

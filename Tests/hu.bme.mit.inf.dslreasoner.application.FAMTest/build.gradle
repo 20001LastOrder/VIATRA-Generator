@@ -16,8 +16,8 @@ sourceSets {
 }
 
 dependencies {
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation group: 'log4j', name: 'log4j', version: '1.2.17'
-    implementation project (':Application:hu.bme.mit.inf.dslreasoner.application')
     implementation "junit:junit:4.11"
+
+    implementation project (':Application:hu.bme.mit.inf.dslreasoner.application')
 }

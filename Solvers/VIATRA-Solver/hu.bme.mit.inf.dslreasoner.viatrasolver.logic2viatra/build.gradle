@@ -1,5 +1,4 @@
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'viatra-solver.base'
     id 'viatra-solver.ecore'
     id 'viatra-solver.xtend'
@@ -16,14 +15,7 @@ sourceSets {
 }
 
 dependencies {
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation group: 'com.google.guava', name: 'guava', version: '27.1-jre'
-    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
-    implementation project (':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
-    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.viatra2logic')
-    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
-    implementation project (':Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc')
-    implementation project (':Solvers:SMT-Solver:com.microsoft.z3')
 	implementation group: 'com.google.inject', name: 'guice', version: '3.0'
 	implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version: '2.23.0'
 	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.runtime.rete', version: '2.4.0'
@@ -32,8 +24,10 @@ dependencies {
 	implementation group: 'org.eclipse.viatra', name: 'org.eclipse.viatra.query.patternlanguage.emf', version: '2.4.0'
 	implementation group: 'com.google.inject.extensions', name: 'guice-multibindings', version: '3.0'
 
-
-
-    // implementation group: 'org.eclipse.collections', name: 'eclipse-collections-api', version: '10.4.0'
-    // implementation group: 'org.eclipse.collections', name: 'eclipse-collections', version: '10.4.0'
+    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.ecore2logic')
+    implementation project (':Solvers:VIATRA-Solver:hu.bme.mit.inf.dslreasoner.viatrasolver.partialinterpretationlanguage')
+    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.viatra2logic')
+    implementation project (':Framework:hu.bme.mit.inf.dslreasoner.logic.model')
+    implementation project (':Solvers:ILP-Solver:hu.bme.mit.inf.dslreasoner.ilp.cbc')
+    implementation project (':Solvers:SMT-Solver:com.microsoft.z3')
 }

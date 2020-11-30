@@ -9,6 +9,7 @@ def z3Jar = 'com.microsoft.z3.jar'
 def z3URL = 'https://projects.itemis.de/nexus/content/repositories/mbeddr/com/microsoft/z3/java-jar/4.8.8/java-jar-4.8.8.jar'
 def projectDir = './Solvers/SMT-Solver/com.microsoft.z3/'
 
+// custom task for z3 Jar
 task downloadNonRepositoryJar {
     def f = new File(projectDir + z3Jar)
 
@@ -17,9 +18,10 @@ task downloadNonRepositoryJar {
     }
 }
 
- compileJava.dependsOn downloadNonRepositoryJar
+// Check z3 jar before compile
+compileJava.dependsOn downloadNonRepositoryJar
 
-
+// simply exporting the API of z3 Jar
 dependencies {
 	api files (z3Jar)
 }
