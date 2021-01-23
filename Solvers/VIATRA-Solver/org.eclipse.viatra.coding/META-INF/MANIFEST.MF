@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Coding
+Bundle-SymbolicName: org.eclipse.viatra.coding;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.viatra.coding
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.eclipse.viatra.coding
